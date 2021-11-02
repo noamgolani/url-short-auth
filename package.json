@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --project ./src",
+    "build": "tsc --project ./src && npm run buildFront",
     "buildFront": "cd ./web npm run build",
-    "dev": "nodemon --watch 'src/**' --ext 'ts,json' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/server.ts"
+    "dev": "nodemon --watch 'src/**' --ext 'ts,json' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/server.ts",
+    "start": "node ./build/server.js"
   },
   "keywords": [],
   "author": "",
