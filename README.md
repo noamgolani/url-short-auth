@@ -17,13 +17,13 @@
 ### Back
 
 - [ ] POST /api/shorten/ { url: <input url> }
-  - [*] validate url
+  - [x] validate url
   - [ ] check if already was shortened
-  - [*] return the shorterned url
-  - [*] check if uid is realy unique
+  - [x] return the shorterned url
+  - [x] check if uid is realy unique
 - [ ] GET /<hash>
   - [ ] store user req data
-  - [*] redirect to the URL
+  - [x] redirect to the URL
 - [ ] GET /app
   - [ ] serve the static fron app
 - [ ] GET /api/stats/<hash>
