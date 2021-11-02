@@ -1,4 +1,4 @@
-### TODO
+### ToDo`s
 
 - [ ] **Misc**
   - [ ] Add workflow scripts
@@ -20,10 +20,10 @@
     - [x] url shorten input -> POST /api/shrten/ { url: <input url> }
     - [x] bootstrap sexy design
     - [x] nice error display
-    - [ ] see stats button -> opens buttom draw with stats:
-      - [ ] requests the stats from -> GET /api/stats/<UID>
-      - [ ] error display
-      - [ ] add dashboard with stats display
+  - [ ] stats page - /app/stats - > template
+    - [ ] requests the stats from -> GET /api/stats/<UID>
+    - [ ] error display
+    - [ ] add dashboard with stats display
 - [ ] **Back**
   - [x] POST /api/shorten/ { url: <input url> }
     - [x] validate url
@@ -35,6 +35,8 @@
     - [x] redirect to the URL
   - [x] GET /app
     - [x] serve the static from ./public folder
+  - [ ] GET /app/?uid="<UID>"
+    - [ ] render a pug template for the stats display
   - [x] GET /api/stats/<UID>
     - [x] respond with JSON of the stats
   - [ ] change dummyDB to mongoose
