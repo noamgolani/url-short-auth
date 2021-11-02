@@ -5,6 +5,12 @@
 - [ ] **Add workflow scripts**
   - [-] build - webpack build ./web into ./public folder
   - [-] deploy to heroku
+  - [ ] add <baseUrl> to the webpack config -> change between dev and prod
+
+### **Testing** | reach 100% coverage
+
+- [ ] **Back**
+- [ ] **Front**
 
 ### Front
 
