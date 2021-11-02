@@ -9,10 +9,11 @@
 
 ### Front
 
-- [ ] **home page** - /app
-  - [ ] url shorten input -> POST /api/shrten/ { url: <input url> }
-  - [ ] bootstrap sexy design
-  - [ ] nice error display
+- [ ] **make better design**
+- [x] **home page** - /app
+  - [x] url shorten input -> POST /api/shrten/ { url: <input url> }
+  - [x] bootstrap sexy design
+  - [x] nice error display
 - [ ] **stats page** /app/<UID>
   - [ ] requests the stats from -> GET /api/stats/<UID>
   - [ ] error display
