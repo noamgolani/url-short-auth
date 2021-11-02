@@ -1,5 +1,6 @@
 import express from "express";
 import validUrl from 'valid-url';
+import { addUrl, getUrl } from "./lib/dummyDB";
 import generateUid from "./lib/uid";
 const app = express();
 
@@ -11,10 +12,18 @@ app.post("/api/shorten", (req, res) => {
 	if(!validUrl.isUri(url)) throw {status: 400, message: "Not a url"};
 
 	const uid = generateUid();
+	addUrl(uid, url);
 	res.status(200)
-	res.send({shortUrl: `http://www.google.com/${uid}`})
+	
+	res.send({shortUrl: `http://localhost:3000/${uid}`});
 	res.end();
 	
+});
+
+app.get('/:uid',async (req,res) => {
+	const {uid}  = req.params;
+	const url = await getUrl(uid);
+	res.redirect(url)
 });
 
 app.use((err, req, res,_) => {
