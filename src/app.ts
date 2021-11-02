@@ -1,10 +1,16 @@
 import express from "express";
+import path from 'path';
 import validUrl from "valid-url";
 import { addUrl, getUrl, getUrlData, updateStats } from "./lib/dummyDB";
-import generateUid from "./lib/uid";
 const app = express();
 
 app.use(express.json());
+
+app.use('/app',express.static(path.resolve('./public')));
+
+app.get('/app', (req,res) => {
+	res.sendFile(path.resolve('./public/index.html'));
+});
 
 app.post("/api/shorten", async (req, res, next) => {
   try {

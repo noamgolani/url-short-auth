@@ -24,8 +24,8 @@
 - [x] GET /<UID>
   - [x] store user req data
   - [x] redirect to the URL
-- [ ] GET /app
-  - [ ] serve the static fron app
+- [x] GET /app
+  - [x] serve the static from ./public folder
 - [x] GET /api/stats/<UID>
   - [x] respond with JSON of the stats
 - [ ] **refactoring**
