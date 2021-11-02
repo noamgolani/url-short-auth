@@ -1,18 +1,18 @@
 ## TODO
 
-### Misc
+#### - [ ] Misc
 
 - [ ] **Add workflow scripts**
   - [x] build - webpack build ./web into ./public folder
   - [x] deploy to heroku
   - [ ] add <baseUrl> to the webpack config -> change between dev and prod
 
-### **Testing** | reach 100% coverage
+#### - [ ] Testing
 
 - [ ] **Back**
 - [ ] **Front**
 
-### Front
+#### - [ ] Front
 
 - [ ] **make better design**
 - [x] **home page** - /app
@@ -27,7 +27,7 @@
     - [ ] unique requesters
     - [ ] usage graph
 
-### Back
+#### - [ ] Back
 
 - [x] POST /api/shorten/ { url: <input url> }
   - [x] validate url
