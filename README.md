@@ -16,15 +16,16 @@
 
 ### Back
 
-- [ ] POST /api/shorten/ { url: <input url> }
+- [x] POST /api/shorten/ { url: <input url> }
   - [x] validate url
   - [x] check if already was shortened
   - [x] return the shorterned url
   - [x] check if uid is realy unique
-- [ ] GET /<UID>
-  - [ ] store user req data
+- [x] GET /<UID>
+  - [x] store user req data
   - [x] redirect to the URL
 - [ ] GET /app
   - [ ] serve the static fron app
-- [ ] GET /api/stats/<UID>
-  - [ ] respond with JSON of the stats
+- [x] GET /api/stats/<UID>
+  - [x] respond with JSON of the stats
+- [ ] **refactoring**

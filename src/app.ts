@@ -1,6 +1,6 @@
 import express from "express";
 import validUrl from "valid-url";
-import { addUrl, getUrl, updateStats } from "./lib/dummyDB";
+import { addUrl, getUrl, getUrlData, updateStats } from "./lib/dummyDB";
 import generateUid from "./lib/uid";
 const app = express();
 
@@ -12,8 +12,7 @@ app.post("/api/shorten", async (req, res, next) => {
     if (!url) throw { status: 400, message: "Missing url param" };
     if (!validUrl.isUri(url)) throw { status: 400, message: "Not a url" };
 
-    const uid = await generateUid();
-    addUrl(uid, url);
+    const uid = await addUrl(url);
     res.status(200);
 
     res.send({ shortUrl: `http://localhost:3000/${uid}` });
@@ -23,11 +22,25 @@ app.post("/api/shorten", async (req, res, next) => {
   }
 });
 
-app.get("/:uid", async (req, res) => {
+app.get("/api/stats/:uid", async (req, res, next) => {
   const { uid } = req.params;
-  const url = await getUrl(uid);
-  updateStats(uid);
-  res.redirect(url);
+  try {
+    const data = await getUrlData(uid);
+    res.send(data);
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.get("/:uid", async (req, res, next) => {
+  const { uid } = req.params;
+  try {
+    const url = await getUrl(uid);
+    updateStats(uid);
+    res.redirect(url);
+  } catch (error) {
+    next(error);
+  }
 });
 
 app.use((err, req, res, _) => {
