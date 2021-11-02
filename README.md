@@ -1,10 +1,11 @@
-## TODO
+### TODO
 
 - [ ] **Misc**
-  - [ ] **Add workflow scripts**
+  - [ ] Add workflow scripts
     - [x] build - webpack build ./web into ./public folder
     - [x] deploy to heroku
-    - [ ] add <baseUrl> to the webpack config -> change between dev and prod
+  - [ ] add <baseUrl> to the webpack config -> change between dev and prod
+  - [ ] Make a README file with actual readme
 - [ ] **Testing**
   - [ ] Back
   - [ ] Front
@@ -14,10 +15,10 @@
     - [x] url shorten input -> POST /api/shrten/ { url: <input url> }
     - [x] bootstrap sexy design
     - [x] nice error display
-  - [ ] stats page /app/<UID>
-    - [ ] requests the stats from -> GET /api/stats/<UID>
-    - [ ] error display
-    - [ ] add dashboard with stats display
+    - [ ] see stats button -> opens buttom draw with stats:
+      - [ ] requests the stats from -> GET /api/stats/<UID>
+      - [ ] error display
+      - [ ] add dashboard with stats display
 - [ ] **Back**
   - [x] POST /api/shorten/ { url: <input url> }
     - [x] validate url
@@ -31,5 +32,11 @@
     - [x] serve the static from ./public folder
   - [x] GET /api/stats/<UID>
     - [x] respond with JSON of the stats
-  - [x] refactoring
   - [ ] change dummyDB to mongoose
+  - [ ] add auth
+    - [ ] POST /auth/login
+      - [ ] generates token
+    - [ ] GET /auth/logout
+    - [ ] POST /auth/register
+    - [ ] `auth` middleware
+      - [ ] validates header content
