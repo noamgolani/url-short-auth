@@ -12,11 +12,5 @@ jobs:
     
     steps:
 
-    - name: Enter the web dir
-      run: cd ./web
-    
-    - name: Install node packages
-      run: npm install
-    
     - name: Build
-      run: npm run build
+      run: npm run buildFront
