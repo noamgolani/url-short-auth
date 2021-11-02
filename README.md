@@ -20,9 +20,10 @@
   - [*] validate url
   - [ ] check if already was shortened
   - [*] return the shorterned url
+  - [*] check if uid is realy unique
 - [ ] GET /<hash>
   - [ ] store user req data
-  - [ ] redirect to the URL
+  - [*] redirect to the URL
 - [ ] GET /app
   - [ ] serve the static fron app
 - [ ] GET /api/stats/<hash>
