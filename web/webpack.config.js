@@ -3,8 +3,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const stylesHandler = require("style-loader");
-
 const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
@@ -32,8 +30,12 @@ const config = {
         exclude: ["/node_modules/"],
       },
       {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
         test: /\.s[ac]ss$/i,
-        use: [stylesHandler, "css-loader", "sass-loader"],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
