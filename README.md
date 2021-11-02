@@ -1,5 +1,12 @@
 ## TODO
 
+### Misc
+
+- [ ] **Add workflow scripts**
+  - [ ] build - webpack build ./web into ./public folder
+  - [ ] dev - start a nodemon server && start webpack dev server
+  - [ ] deploy to heroku
+
 ### Front
 
 - [ ] **home page** - /app
@@ -29,3 +36,4 @@
 - [x] GET /api/stats/<UID>
   - [x] respond with JSON of the stats
 - [x] **refactoring**
+- [ ] **change dummyDB to mongoose**
