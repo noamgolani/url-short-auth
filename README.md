@@ -28,4 +28,4 @@
   - [x] serve the static from ./public folder
 - [x] GET /api/stats/<UID>
   - [x] respond with JSON of the stats
-- [ ] **refactoring**
+- [x] **refactoring**
