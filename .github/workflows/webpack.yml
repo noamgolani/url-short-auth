@@ -2,15 +2,16 @@ name: build front
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
-  build:
+  build fron:
     runs-on: ubuntu-latest
-    
-    steps:
 
-    - name: Build
-      run: npm run buildFront
+    steps:
+      - name: Build
+        run: cd web
+      - name: aaa
+        run: npm run build
