@@ -8,6 +8,11 @@
   - [ ] Make a README file with actual readme
 - [ ] **Testing**
   - [ ] Back
+    - [ ] suite for: `uid.ts`
+    - [ ] suite for: `errorHandler.ts`
+    - [ ] suite for: `apiRoute.ts`
+    - [ ] suite for: `appRoute.ts`
+    - [ ] suite for: `shortRoute.ts`
   - [ ] Front
 - [ ] **Front**
   - [ ] make better design
