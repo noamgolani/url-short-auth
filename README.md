@@ -18,7 +18,7 @@
 
 - [ ] POST /api/shorten/ { url: <input url> }
   - [x] validate url
-  - [ ] check if already was shortened
+  - [x] check if already was shortened
   - [x] return the shorterned url
   - [x] check if uid is realy unique
 - [ ] GET /<UID>
