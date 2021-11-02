@@ -2,10 +2,9 @@
 
 ### Misc
 
-- [ ] **Add workflow scripts**
+- [x] **Add workflow scripts**
   - [x] build - webpack build ./web into ./public folder
-  - [ ] dev - start a nodemon server && start webpack dev server
-  - [ ] deploy to heroku
+  - [x] deploy to heroku
 
 ### Front
 

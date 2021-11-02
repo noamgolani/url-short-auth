@@ -57,7 +57,9 @@ async function allUrls(): Promise<object> {
 }
 
 async function urlExists(url: string): Promise<string | false> {
-  return (await allUrls())[url] || false;
+  const all = await allUrls();
+  if(Object.keys(all).includes(url)) return all[url];
+  return false;
 }
 
 export async function getUrlData(uid: string): Promise<urlData> {
