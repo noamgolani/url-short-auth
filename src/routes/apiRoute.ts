@@ -12,9 +12,7 @@ router.post("/shorten", async (req, res, next) => {
 
     const uid = await addUrl(url);
     res.status(200);
-
     res.send({ shortUrl: `http://localhost:3000/${uid}` });
-    res.end();
   } catch (error) {
     next(error);
   }
