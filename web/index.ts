@@ -14,6 +14,8 @@ $("#shortenBtn").on("click", async () => {
   }
 });
 
+$(".short-url").hide();
+
 function showInValid(msg: string):void {
   $(".output-url").hide();
   $('.invalid-feedback').text(msg);
@@ -22,7 +24,7 @@ function showInValid(msg: string):void {
 }
 
 function showValid(msg: string): void {
-  $(".output-url").show();
+  $(".short-url").show();
   $(".output-url").attr('href',msg);
   $(".output-url").text(msg);
   $("#url").removeClass("is-invalid");
