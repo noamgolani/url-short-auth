@@ -11,6 +11,7 @@ app.use(express.json());
 app.use("/app", appRoute);
 app.use("/api", apiRoute);
 app.use("/", shortRoute);
+
 app.use(errorHandler);
 
 export default app;

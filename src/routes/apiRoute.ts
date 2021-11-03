@@ -12,7 +12,7 @@ router.post("/shorten", async (req, res, next) => {
 
     const uid = await addUrl(url);
     res.status(200);
-    res.send({ shortUrl: `https://sheltered-reef-79501.herokuapp.com/${uid}` });
+    res.send({ shortUrl: `https://sheltered-reef-79501.herokuapp.com/${uid}` , uid});
   } catch (error) {
     next(error);
   }

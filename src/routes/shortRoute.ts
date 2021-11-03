@@ -15,4 +15,8 @@ router.get("/:uid", async (req, res, next) => {
   }
 });
 
+router.get("/", (req,res) => {
+  res.redirect("/app");
+})
+
 export default router;

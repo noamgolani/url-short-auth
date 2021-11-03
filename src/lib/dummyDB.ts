@@ -1,6 +1,9 @@
+import dotenv from 'dotenv';
 import * as fs from "fs/promises";
 import * as fsSync from "fs";
 import generateUid from "./uid";
+
+dotenv.config();
 
 interface urlData {
   url: string;
@@ -8,7 +11,7 @@ interface urlData {
   creationDate: Date;
 }
 
-const PATH = "DATA.json";
+const PATH = process.env.DB_PATH;
 
 try {
   fsSync.accessSync(PATH);
@@ -18,7 +21,7 @@ try {
 
 export async function addUrl(longUrl: string):Promise<string>  {
   const existingUid = await urlExists(longUrl);
-  if(existingUid) return existingUid;
+  if(existingUid && existingUid != undefined) return existingUid;
 
   const uid = await generateUid();
   await updateUrlData(uid, {
@@ -28,8 +31,12 @@ export async function addUrl(longUrl: string):Promise<string>  {
   });
 }
 
+export async function clearDB() {
+  await fs.rm(PATH);
+}
+
 export async function getUrl(uid: string): Promise<string> {
-  return (await getUrlData(uid)).url;
+  return (await getUrlData(uid))?.url;
 }
 
 export async function updateStats(uid: string) {
