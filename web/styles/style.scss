@@ -80,15 +80,17 @@ button {
 
 .short-url {
   margin-top: 2rem;
+  align-items: center;
   button {
     --bg-color: var(--light-primary);
     --color: var(--font-color);
+    padding: 1rem;
   }
   a {
     text-decoration: none;
     font-weight: 700;
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 }
 
