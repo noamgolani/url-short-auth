@@ -9,4 +9,12 @@ describe("GET /app", ()=>{
     expect(res.statusCode).toBe(200); 
     expect(res.text).toBe(content.toString())
   })
+
+  test("should serve static files from the public folder", async ()=> {
+    const publicCont = await fs.readdir('./public');
+    for(const file of publicCont) {
+      const res = await request(app).get(`/app/${file}`);
+      expect(res.statusCode).toBe(200);
+    }
+  });
 });
