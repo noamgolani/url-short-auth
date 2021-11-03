@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
+dotenv.config();
 import app from './app';
 
-dotenv.config();
 import { initDB } from './lib/dummyDB';
 
 const port = process.env.PORT || 3000;

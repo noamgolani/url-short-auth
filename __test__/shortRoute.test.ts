@@ -23,6 +23,13 @@ describe("GET /:uid", () => {
 		expect(nextUrl).toBe(testNext);
 	});
 
+	test("should redirect to /app if uid not exists", async ()=>{
+		const response = await request(app).get(`/BADUID!!!`);
+		expect(response.statusCode).toBe(302);
+		const nextUrl = response.header.location;
+		expect(nextUrl).toBe("/app");
+	});
+
 	test("should store data about the redirect request", async ()=>{
 		const testNext = "http://www.google.com/a";
 		const { uid } = (

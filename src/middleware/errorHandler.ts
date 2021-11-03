@@ -1,5 +1,5 @@
 export default function (err, req, res, _) {
-  if (err.status) {
+  if (typeof err.status === 'number') {
     res.status(err.status);
     res.send({
       error: err.message,
