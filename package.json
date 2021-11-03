@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "build": " npm run buildFront && tsc --project ./src",
     "dev": "nodemon --watch 'src/**' --ext 'ts,json' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/server.ts",
     "start": "node ./build/server.js",
@@ -22,6 +23,8 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.0.2",
     "@types/jquery": "^3.5.8",
