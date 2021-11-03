@@ -1,30 +1,32 @@
 ### ToDo`s
 
 - [ ] **Misc**
-  - [ ] Add workflow scripts
-    - [x] build - webpack build ./web into ./public folder
-    - [x] deploy to heroku
   - [ ] add <baseUrl> to the webpack config -> change between dev and prod
   - [ ] Make a README file with actual readme
-- [ ] **Testing**
-  - [ ] Back
-    - [ ] suite for: `uid.ts`
-    - [ ] suite for: `errorHandler.ts`
-    - [ ] suite for: `apiRoute.ts`
-    - [ ] suite for: `appRoute.ts`
-    - [ ] suite for: `shortRoute.ts`
-  - [ ] Front
+  - [x] Add workflow scripts
+    - [x] build - webpack build ./web into ./public folder
+    - [x] deploy to heroku
 - [ ] **Front**
   - [ ] make better design
-  - [x] home page - /app
-    - [x] url shorten input -> POST /api/shrten/ { url: <input url> }
-    - [x] bootstrap sexy design
-    - [x] nice error display
   - [ ] stats page - /app/stats - > template
     - [ ] requests the stats from -> GET /api/stats/<UID>
     - [ ] error display
     - [ ] add dashboard with stats display
+  - [x] home page - /app
+    - [x] url shorten input -> POST /api/shrten/ { url: <input url> }
+    - [x] bootstrap sexy design
+    - [x] nice error display
 - [ ] **Back**
+  - [ ] GET /app/?uid="<UID>"
+    - [ ] render a pug template for the stats display
+  - [ ] change dummyDB to mongoose
+  - [ ] add auth
+    - [ ] POST /auth/login
+      - [ ] generates token
+    - [ ] GET /auth/logout
+    - [ ] POST /auth/register
+    - [ ] `auth` middleware
+      - [ ] validates header content
   - [x] POST /api/shorten/ { url: <input url> }
     - [x] validate url
     - [x] check if already was shortened
@@ -35,15 +37,5 @@
     - [x] redirect to the URL
   - [x] GET /app
     - [x] serve the static from ./public folder
-  - [ ] GET /app/?uid="<UID>"
-    - [ ] render a pug template for the stats display
   - [x] GET /api/stats/<UID>
     - [x] respond with JSON of the stats
-  - [ ] change dummyDB to mongoose
-  - [ ] add auth
-    - [ ] POST /auth/login
-      - [ ] generates token
-    - [ ] GET /auth/logout
-    - [ ] POST /auth/register
-    - [ ] `auth` middleware
-      - [ ] validates header content
