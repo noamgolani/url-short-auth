@@ -1,6 +1,6 @@
 import app from "../src/app";
 import request from "supertest";
-import { clearDB } from '../src/lib/dummyDB'
+import { clearDB, initDB} from '../src/lib/dummyDB'
 
 describe("POST /api/shorten", () => {
 	test("should throw error if no url", async () => {
@@ -23,6 +23,8 @@ describe("POST /api/shorten", () => {
 	});
 });
 
-afterAll(async ()=>{
-  await clearDB();
-})
+beforeAll((done)=>{
+  clearDB().then(()=>{
+    return initDB()
+  }).then(done);
+});

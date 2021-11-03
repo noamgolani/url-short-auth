@@ -8,9 +8,9 @@ import errorHandler from "./middleware/errorHandler";
 
 app.use(express.json());
 
-app.use("/app", appRoute);
-app.use("/api", apiRoute);
-app.use("/", shortRoute);
+app.use("/app", appRoute); // front
+app.use("/api", apiRoute); // api
+app.use("/", shortRoute); // short route redirecting
 
 app.use(errorHandler);
 

@@ -8,7 +8,7 @@ router.get("/:uid", async (req, res, next) => {
   const { uid } = req.params;
   try {
     const url = await getUrl(uid);
-    updateStats(uid);
+    await updateStats(uid);
     res.redirect(url);
   } catch (error) {
     next(error);

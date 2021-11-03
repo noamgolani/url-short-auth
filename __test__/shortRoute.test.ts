@@ -1,6 +1,6 @@
 import app from "../src/app";
 import request from "supertest";
-import {getUrlData} from '../src/lib/dummyDB';
+import {getUrlData, clearDB, initDB} from '../src/lib/dummyDB';
 
 describe("GET /", () => {
 	test("should redirect to the /app", async () => {
@@ -11,7 +11,7 @@ describe("GET /", () => {
 	});
 });
 
-describe.skip("GET /:uid", () => {
+describe("GET /:uid", () => {
 	test("should redirect to the correct url", async () => {
 		const testNext = "http://www.google.com/abc";
 		const { uid } = (
@@ -24,14 +24,22 @@ describe.skip("GET /:uid", () => {
 	});
 
 	test("should store data about the redirect request", async ()=>{
-		const testNext = "http://www.google.com/abc";
+		const testNext = "http://www.google.com/a";
 		const { uid } = (
 			await request(app).post("/api/shorten").send({ url: testNext })
 		).body;
-		const initialCount = (await getUrlData(uid)).redirectCount;
+		let urlData = await getUrlData(uid);
+		const initialCount = urlData.redirectCount;
 		await request(app).get(`/${uid}`);
-		const afterCount = (await getUrlData(uid)).redirectCount;
+		urlData = await getUrlData(uid);
+		const afterCount = urlData.redirectCount;
 		expect(afterCount).toBe(initialCount + 1);
 		
 	});
+});
+
+beforeAll((done)=>{
+  clearDB().then(()=>{
+    return initDB()
+  }).then(done);
 });
