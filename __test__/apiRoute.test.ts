@@ -23,6 +23,14 @@ describe("POST /api/shorten", () => {
 	});
 });
 
+describe("GET /api/stats/<uid>", ()=>{
+	test("should throw if bad or non existing uid", async ()=>{
+		const res = await request(app).get('/api/stats/BADUID!@#');
+		expect(res.statusCode).toBe(404)
+	})
+
+});
+
 beforeAll((done)=>{
   clearDB().then(()=>{
     return initDB()

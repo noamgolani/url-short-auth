@@ -22,6 +22,7 @@ router.get("/stats/:uid", async (req, res, next) => {
   const { uid } = req.params;
   try {
     const data = await getUrlData(uid);
+    if(!data) throw {status: 404, message: "Cant find uid"}
     res.send(data);
   } catch (error) {
     next(error);

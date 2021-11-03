@@ -4,6 +4,8 @@ export default {
   // coveragePathIgnorePatterns: [
   //   "/node_modules/"
   // ],
+  verbose: true,
+  detectOpenHandles: true,
 
   setupFiles: ['./.jest/setEnv.ts'],
   modulePathIgnorePatterns: ['DATA.json'],

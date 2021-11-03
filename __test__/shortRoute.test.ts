@@ -2,6 +2,8 @@ import app from "../src/app";
 import request from "supertest";
 import {getUrlData, clearDB, initDB} from '../src/lib/dummyDB';
 
+//TODO test for 500 errors using sinon
+
 describe("GET /", () => {
 	test("should redirect to the /app", async () => {
 		const res = await request(app).get("/");
