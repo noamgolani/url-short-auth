@@ -6,6 +6,8 @@ import { updateStats, getUrl } from '../lib/dummyDB';
 
 router.get("/:uid", async (req, res, next) => {
   const { uid } = req.params;
+  console.log(uid);
+  
   try {
     const url = await getUrl(uid);
     if (!url) return res.redirect('/app');

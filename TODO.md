@@ -8,7 +8,7 @@
     - [x] build - webpack build ./web into ./public folder
     - [x] deploy to heroku
 - [ ] **Front**
-  - [ ] make better design
+  - [x] make better design
   - [ ] stats page - /app/stats - > template
     - [ ] requests the stats from -> GET /api/stats/<UID>
     - [ ] error display

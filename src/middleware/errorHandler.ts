@@ -10,5 +10,4 @@ export default function (err, req, res, _) {
     res.send({ error: "Internal server error" });
   }
 
-  res.end();
 }
