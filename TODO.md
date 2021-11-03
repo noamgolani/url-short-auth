@@ -1,6 +1,7 @@
 ### ToDo`s
 
 - [ ] **Misc**
+  - [ ] **Add Favicon**
   - [ ] add <baseUrl> to the webpack config -> change between dev and prod
   - [ ] Make a README file with actual readme
   - [x] Add workflow scripts
@@ -17,9 +18,9 @@
     - [x] bootstrap sexy design
     - [x] nice error display
 - [ ] **Back**
+  - [ ] change dummyDB to mongoose
   - [ ] GET /app/?uid="<UID>"
     - [ ] render a pug template for the stats display
-  - [ ] change dummyDB to mongoose
   - [ ] add auth
     - [ ] POST /auth/login
       - [ ] generates token

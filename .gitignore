@@ -4,3 +4,4 @@ public
 DATA.json
 TEST_DATA.json
 coverage
+.env

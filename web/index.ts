@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/style.scss";
 
 import $ from "jquery";
@@ -12,20 +11,22 @@ $("#shortenBtn").on("click", async () => {
     showValid(shortUrl);
   } catch (error) {
     if(error.isAxiosError) showInValid(error.response.data.error);
+    else showInValid("Request failed");
   }
 });
 
+$(".short-url").hide();
+$(".error").hide();
+
 function showInValid(msg: string):void {
-  $(".output-url").hide();
-  $('.invalid-feedback').text(msg);
-  $("#url").removeClass("is-valid");
-  $("#url").addClass("is-invalid");
+  $(".short-url").hide();
+  $('.error').show();
+  $('.error').text(msg);
 }
 
 function showValid(msg: string): void {
-  $(".output-url").show();
-  $(".output-url").attr('href',msg);
-  $(".output-url").text(msg);
-  $("#url").removeClass("is-invalid");
-  $("#url").addClass("is-valid");
+  $(".short-url").show();
+  $('.error').hide();
+  $('.short-url').find('a').text(msg);
+  $('.short-url').find('a').attr('href',msg);
 }

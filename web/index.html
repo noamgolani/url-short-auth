@@ -7,16 +7,29 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Url to short" id="url">
-            <button class="btn btn-outline-primary" type="button" id="shortenBtn"> Shorten </button>
-            <div class="invalid-feedback">
-                Looks good!
+    <div class="head">
+        <div class="container">
+            <h1>Shorty</h1>
+            <h2> Paste the URL to be shortened </h2>
+            <div class="input-group">
+                <input type="text" placeholder="Enter the link here" id="url">
+                <button type="button" id="shortenBtn"> Shorten URL </button>
             </div>
+            <div class="short-url input-group">
+                <a href="#" target="blank"></a>
+                <button>Stats</button>
+            </div>
+            <div class="error"></div>
         </div>
-        <a class="output-url">
-        </a>
+    </div>
+    <div class="about">
+      <div class="container">
+          <h2> Want to see stats about the shortened url? </h2>
+          <p> When creating a link, it automatically gets tracked. And bunch of data is being collected about the link</p>
+          <button> See Stats</button>
+      </div>  
+    </div>
+    <div class="footer">
 
     </div>
 </body>
