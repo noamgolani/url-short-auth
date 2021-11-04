@@ -18,6 +18,7 @@
     - [x] bootstrap sexy design
     - [x] nice error display
 - [ ] **Back**
+  - [ ] DNS lookup for new url.
   - [ ] change dummyDB to mongoose
   - [ ] GET /app/?uid="<UID>"
     - [ ] render a pug template for the stats display
