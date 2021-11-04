@@ -3,8 +3,7 @@ import express from 'express';
 const router = express.Router();
 
 router.get('/stats/:uid',(req,res) => {
-  // will fetch data
-  // will return template
+  res.render('stats', {title: "testing the pug"});
 });
 
 router.get("/", (_, res) => {

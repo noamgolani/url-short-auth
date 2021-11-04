@@ -8,6 +8,8 @@ import errorHandler from "./middleware/errorHandler";
 
 app.use(express.json());
 
+app.set('view engine', 'pug');
+
 app.use("/app", appRoute); // front
 app.use("/api", apiRoute); // api
 app.use("/", shortRoute); // short route redirecting
