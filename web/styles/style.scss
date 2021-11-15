@@ -60,11 +60,39 @@ button {
   box-shadow: 0 10px 20px var(--font-color);
 }
 
-.about {
+.about-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--light-primary);
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    .tech {
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.tech {
+  background-repeat: no-repeat;
+  background-size: cover;
+  &.express {
+    background-image: url("./tech/express.png");
+  }
+}
+
+.about-stats {
   justify-content: center;
   width: 100%;
   display: flex;
   font-size: 1.3rem;
+  padding-bottom: 3rem;
   button {
     padding: 1rem;
     margin: auto;
